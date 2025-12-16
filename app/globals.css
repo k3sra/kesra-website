@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg0: 10 10 12;
+  --bg1: 12 12 16;
+  --ink: 245 245 250;
+  --muted: 170 170 180;
+
+  /* Accent (chosen) */
+  --a0: 124 92 255;   /* violet */
+  --a1: 0 210 255;    /* cyan */
+
+  --ring: 255 255 255;
+  --hair: 255 255 255;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 800px at 70% 10%, rgba(124,92,255,.18), transparent 60%),
+              radial-gradient(900px 600px at 20% 80%, rgba(0,210,255,.14), transparent 55%),
+              linear-gradient(180deg, rgb(var(--bg0)) 0%, rgb(var(--bg1)) 100%);
+  color: rgb(var(--ink));
+  font-feature-settings: "ss01" 1, "ss02" 1, "cv11" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(124, 92, 255, .35);
+}
+
+/* Subtle scrollbar (desktop only) */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.12);
+    border-radius: 999px;
+    border: 2px solid rgba(0,0,0,.35);
+  }
+  ::-webkit-scrollbar-track { background: rgba(0,0,0,.15); }
+}
+
+/* Reduce motion: kill smooth/animated effects */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
