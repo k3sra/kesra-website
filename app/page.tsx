@@ -15,7 +15,7 @@ const links = [
 
 function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-white/75">
+    <span className="pill inline-flex items-center px-3 py-1 text-[12px] text-white/75">
       {children}
     </span>
   );
@@ -28,10 +28,9 @@ export default function Page() {
       <ImmersiveBackground />
 
       <div className="relative mx-auto max-w-[1120px] px-5 sm:px-7">
-        {/* top */}
         <header className="flex items-center justify-between pt-7 sm:pt-9">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-2xl border border-white/12 bg-white/5 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_16px_44px_rgba(0,0,0,0.45)] grid place-items-center">
+            <div className="h-10 w-10 rounded-2xl border border-white/12 bg-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_16px_44px_rgba(0,0,0,0.45)] grid place-items-center">
               <span className="font-semibold tracking-tight">K</span>
             </div>
             <div className="leading-tight">
@@ -47,11 +46,10 @@ export default function Page() {
           </nav>
         </header>
 
-        {/* hero */}
         <section className="pt-16 sm:pt-20 pb-16 sm:pb-20">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/5 px-3 py-1 text-[12px] text-white/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-cyan-300/80 shadow-[0_0_24px_rgba(0,210,255,0.65)]" />
+            <div className="pill inline-flex items-center gap-2 px-3 py-1 text-[12px] text-white/75">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-300/90 shadow-[0_0_28px_rgba(0,210,255,0.75)]" />
               Backend Platform &amp; Systems Engineer
               <span className="text-white/40">·</span>
               systems • backend • frontend • Unity
@@ -64,32 +62,29 @@ export default function Page() {
                 <h1 className="text-[44px] sm:text-[64px] lg:text-[78px] font-semibold tracking-tight leading-[0.98]">
                   yep that’s me<span className="text-white/50">.</span>
                 </h1>
-                <p className="mt-4 text-[16px] sm:text-[18px] text-white/70 max-w-[62ch]">
+                <p className="mt-4 text-[16px] sm:text-[18px] text-white/72 max-w-[62ch]">
                   pretending to know what’s going on — while quietly building reliable services,
                   scalable data systems, and production-grade infrastructure.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Magnetic>
-                    <a
-                      href="#contact"
-                      className="group inline-flex items-center justify-center rounded-2xl border border-white/12 bg-white/6 px-5 py-3 text-sm font-medium shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_18px_55px_rgba(0,0,0,0.55)] transition hover:bg-white/10"
-                    >
-                      <span className="mr-2 h-1.5 w-1.5 rounded-full bg-violet-300/80 shadow-[0_0_24px_rgba(124,92,255,0.6)]" />
+                    <a href="#contact" className="btn-primary inline-flex items-center justify-center px-5 py-3 text-sm font-medium">
+                      <span className="mr-2 h-1.5 w-1.5 rounded-full bg-violet-300/90 shadow-[0_0_28px_rgba(124,92,255,0.75)]" />
                       contact
-                      <span className="ml-3 opacity-60 transition group-hover:opacity-100">→</span>
+                      <span className="ml-3 opacity-70">→</span>
                     </a>
                   </Magnetic>
 
                   <Magnetic strength={10}>
                     <a
                       href="https://github.com/k3sra"
-                      className="inline-flex items-center justify-center rounded-2xl border border-white/12 bg-transparent px-5 py-3 text-sm font-medium text-white/80 hover:text-white transition hover:bg-white/5"
+                      className="btn-ghost inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-white/85 hover:text-white transition"
                       target="_blank"
                       rel="noreferrer"
                     >
                       github
-                      <span className="ml-3 opacity-60">↗</span>
+                      <span className="ml-3 opacity-70">↗</span>
                     </a>
                   </Magnetic>
                 </div>
@@ -105,9 +100,9 @@ export default function Page() {
             </Reveal>
 
             <Reveal delayMs={150} className="lg:justify-self-end">
-              <div className="rounded-[28px] border border-white/12 bg-white/5 p-5 sm:p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_26px_70px_rgba(0,0,0,0.65)]">
-                <div className="text-[12px] tracking-[0.28em] text-white/60">STATUS</div>
-                <div className="mt-3 text-sm text-white/80">
+              <div className="glass p-5 sm:p-6">
+                <div className="text-[12px] tracking-[0.28em] text-white/65">STATUS</div>
+                <div className="mt-3 text-sm text-white/82">
                   currently: building systems that don’t fall over
                 </div>
 
@@ -119,8 +114,8 @@ export default function Page() {
                     ["DX", "clear configs · predictable behavior · deep documentation"],
                   ].map(([k, v]) => (
                     <div key={k} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3">
-                      <div className="text-[12px] text-white/85">{k}</div>
-                      <div className="mt-1 text-[12px] text-white/60">{v}</div>
+                      <div className="text-[12px] text-white/88">{k}</div>
+                      <div className="mt-1 text-[12px] text-white/65">{v}</div>
                     </div>
                   ))}
                 </div>
@@ -129,27 +124,26 @@ export default function Page() {
           </div>
         </section>
 
-        {/* about */}
         <section className="pb-16 sm:pb-20">
           <Reveal>
-            <div className="rounded-[32px] border border-white/12 bg-white/5 p-6 sm:p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_26px_70px_rgba(0,0,0,0.55)]">
-              <div className="text-[12px] tracking-[0.32em] text-white/60">ABOUT</div>
+            <div className="glass p-6 sm:p-8">
+              <div className="text-[12px] tracking-[0.32em] text-white/65">ABOUT</div>
               <div className="mt-4 grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-                <p className="text-[15px] sm:text-[16px] leading-relaxed text-white/75">
+                <p className="text-[15px] sm:text-[16px] leading-relaxed text-white/76">
                   I’m Kesra — I build backend platforms, systems, and production infrastructure that stays calm under pressure.
                   I love reliable services, scalable data, and clean developer experiences. I also build frontend when it matters,
                   and I mess around with Unity/game development because I genuinely love games.
                 </p>
                 <div className="grid gap-3">
                   <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <div className="text-[12px] text-white/85">Focus</div>
-                    <div className="mt-1 text-[12px] text-white/60">
+                    <div className="text-[12px] text-white/88">Focus</div>
+                    <div className="mt-1 text-[12px] text-white/65">
                       backend architecture · systems engineering · platform reliability
                     </div>
                   </div>
                   <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <div className="text-[12px] text-white/85">Build style</div>
-                    <div className="mt-1 text-[12px] text-white/60">
+                    <div className="text-[12px] text-white/88">Build style</div>
+                    <div className="mt-1 text-[12px] text-white/65">
                       type-safe APIs · safe retries · observability-first · least privilege
                     </div>
                   </div>
@@ -159,12 +153,11 @@ export default function Page() {
           </Reveal>
         </section>
 
-        {/* skills */}
         <section className="pb-16 sm:pb-20">
           <Reveal>
             <div className="flex items-end justify-between gap-6">
               <div>
-                <div className="text-[12px] tracking-[0.32em] text-white/60">STACK</div>
+                <div className="text-[12px] tracking-[0.32em] text-white/65">STACK</div>
                 <div className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight">
                   premium systems toolkit
                 </div>
@@ -185,14 +178,11 @@ export default function Page() {
               ["Playground", ["Unity", "frontend", "tooling", "experiments"]],
             ].map(([title, items], i) => (
               <Reveal key={title as string} delayMs={i * 60}>
-                <div className="rounded-[26px] border border-white/12 bg-white/5 p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_22px_60px_rgba(0,0,0,0.55)]">
-                  <div className="text-sm font-medium text-white/90">{title as string}</div>
+                <div className="glass p-5">
+                  <div className="text-sm font-medium text-white/92">{title as string}</div>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {(items as string[]).map((it) => (
-                      <span
-                        key={it}
-                        className="inline-flex items-center rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[12px] text-white/70"
-                      >
+                      <span key={it} className="pill inline-flex items-center px-3 py-1 text-[12px] text-white/75">
                         {it}
                       </span>
                     ))}
@@ -203,19 +193,16 @@ export default function Page() {
           </div>
         </section>
 
-        {/* contact */}
         <section id="contact" className="pb-16 sm:pb-20">
           <Reveal>
-            <div className="rounded-[34px] border border-white/12 bg-white/5 p-6 sm:p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.06)_inset,0_26px_70px_rgba(0,0,0,0.6)]">
+            <div className="glass p-6 sm:p-8">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <div className="text-[12px] tracking-[0.32em] text-white/60">CONTACT</div>
+                  <div className="text-[12px] tracking-[0.32em] text-white/65">CONTACT</div>
                   <div className="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight">
                     say hi — or ship something
                   </div>
-                  <div className="mt-2 text-sm text-white/70">
-                    {site.domain}
-                  </div>
+                  <div className="mt-2 text-sm text-white/70">{site.domain}</div>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {links.map((l) => (
@@ -224,10 +211,10 @@ export default function Page() {
                         href={l.href}
                         target={l.href.startsWith("http") ? "_blank" : undefined}
                         rel={l.href.startsWith("http") ? "noreferrer" : undefined}
-                        className="inline-flex items-center justify-center rounded-2xl border border-white/12 bg-black/20 px-4 py-3 text-sm font-medium text-white/85 hover:text-white transition hover:bg-white/8"
+                        className="btn-ghost inline-flex items-center justify-center px-4 py-3 text-sm font-medium text-white/88 hover:text-white transition"
                       >
                         {l.label}
-                        <span className="ml-3 opacity-60">↗</span>
+                        <span className="ml-3 opacity-70">↗</span>
                       </a>
                     </Magnetic>
                   ))}
