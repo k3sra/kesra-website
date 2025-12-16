@@ -37,7 +37,7 @@ export function EnterPortal() {
       <div className="relative flex flex-col items-center gap-4 px-8">
         <div className="portal-ring" aria-hidden />
         <div className="portal-ring portal-ring-2" aria-hidden />
-        <div className="portal-ring portal-ring-3" aria-hidden />
+        <div class="portal-ring portal-ring-3" aria-hidden />
 
         <div className="text-center">
           <div className="text-[12px] tracking-[0.42em] text-white/75">ENTERING</div>
