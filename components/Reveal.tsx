@@ -1,64 +1,72 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
 
-function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const onChange = () => setReduced(!!mq.matches);
-    onChange();
-    mq.addEventListener?.("change", onChange);
-    return () => mq.removeEventListener?.("change", onChange);
-  }, []);
-  return reduced;
+type RevealProps = {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+  from?: "bottom" | "top" | "left" | "right";
+};
+
+function getVariants(from: RevealProps["from"], reduced: boolean) {
+  const dist = reduced ? 0 : 18;
+  const base = { opacity: 0 } as const;
+
+  switch (from) {
+    case "top":
+      return { hidden: { ...base, y: -dist }, show: { opacity: 1, y: 0 } };
+    case "left":
+      return { hidden: { ...base, x: -dist }, show: { opacity: 1, x: 0 } };
+    case "right":
+      return { hidden: { ...base, x: dist }, show: { opacity: 1, x: 0 } };
+    default:
+      return { hidden: { ...base, y: dist }, show: { opacity: 1, y: 0 } };
+  }
 }
 
-export function Reveal({
+export default function Reveal({
   children,
-  delayMs = 0,
-  className = "",
-}: {
-  children: React.ReactNode;
-  delayMs?: number;
-  className?: string;
-}) {
-  const reduced = usePrefersReducedMotion();
+  delay = 0,
+  className,
+  from = "bottom",
+}: RevealProps) {
+  const reduced = false; // disable reduced-motion
   const ref = useRef<HTMLDivElement | null>(null);
-  const [on, setOn] = useState(false);
+  const controls = useAnimation();
+  const [inView, setInView] = useState(false);
+  const variants = useMemo(() => getVariants(from, reduced), [from, reduced]);
 
   useEffect(() => {
-    if (reduced) {
-      setOn(true);
-      return;
-    }
     const el = ref.current;
     if (!el) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        const e = entries[0];
-        if (e?.isIntersecting) {
-          window.setTimeout(() => setOn(true), delayMs);
-          io.disconnect();
-        }
-      },
-      { root: null, threshold: 0.14, rootMargin: "0px 0px -10% 0px" }
+    const obs = new IntersectionObserver(
+      ([e]) => e.isIntersecting && setInView(true),
+      { threshold: 0.15 }
     );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [delayMs, reduced]);
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (inView) controls.start("show");
+  }, [controls, inView]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={[
-        "reveal",
-        on ? "reveal-on" : "reveal-off",
-        className,
-      ].join(" ")}
+      className={className}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+      transition={{
+        duration: 0.85,
+        delay,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

@@ -1,26 +1,29 @@
 {
   "name": "kesra-website",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "next dev -H 0.0.0.0 -p 3000",
-    "build": "next build",
-    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}"
+    "dev": "npx next dev",
+    "build": "npx next build",
+    "start": "npx next start",
+    "typecheck": "npx tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "clsx": "2.1.1",
-    "framer-motion": "12.23.26",
-    "lucide-react": "0.561.0",
-    "next": "16.0.10",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "tailwind-merge": "3.4.0"
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.561.0",
+    "next": "14.2.12",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.1.18",
-    "postcss": "8.5.6",
-    "tailwindcss": "4.1.18",
-    "typescript": "5.9.3"
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^20.10.6",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.4.5"
   }
 }
