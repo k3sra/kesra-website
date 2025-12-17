@@ -1,0 +1,33 @@
+
+> kesra-website@1.0.0 build
+> npx next build --no-lint
+
+ ΓÜá Linting is disabled.
+  Γû▓ Next.js 14.2.12
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/7) ...
+   Generating static pages (1/7) 
+   Generating static pages (3/7) 
+   Generating static pages (5/7) 
+ Γ£ô Generating static pages (7/7)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+Γöî Γùï /                                    53.3 kB         140 kB
+Γö£ Γùï /_not-found                          871 B          87.9 kB
+Γö£ Γùï /api/health                          0 B                0 B
+Γö£ Γùï /robots.txt                          0 B                0 B
+Γöö Γùï /sitemap.xml                         0 B                0 B
++ First Load JS shared by all            87.1 kB
+  Γö£ chunks/23-fbf76cc7490f95b5.js        31.6 kB
+  Γö£ chunks/fd9d1056-a314f73be3b4a5e7.js  53.6 kB
+  Γöö other shared chunks (total)          1.86 kB
+
+
+Γùï  (Static)  prerendered as static content
+

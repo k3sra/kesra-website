@@ -1,0 +1,43 @@
+
+> kesra-website@1.0.0 build
+> npx next build
+
+  Γû▓ Next.js 14.2.12
+
+   Creating an optimized production build ...
+
+warn - The safelist pattern `/bg-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/text-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/opacity-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/h-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/w-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/inset-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/flex-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/grid-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes
+
+warn - The safelist pattern `/shadow-\[[^\]]+\]/` doesn't match any Tailwind CSS classes.
+warn - Fix this pattern or remove it from your `safelist` configuration.
+warn - https://tailwindcss.com/docs/content-configuration#safelisting-classes

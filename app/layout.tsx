@@ -1,59 +1,51 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import { content } from "@/lib/content";
 import "./globals.css";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
-const space = Space_Grotesk({
+// Using Inter for a clean, premium Swiss-style look (similar to Apple/Linear)
+const sans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["400", "500", "600", "700"]
 });
 
 const mono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
-  weight: ["400", "500", "600"]
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${site.domain}`),
-  title: site.title,
-  description: site.description,
-  applicationName: site.title,
-  alternates: { canonical: `https://${site.domain}` },
-  authors: [{ name: site.author.name }],
-  icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }]
-  },
+  title: content.meta.title,
+  description: content.meta.description,
+  metadataBase: new URL(`https://${content.meta.domain}`),
   openGraph: {
-    title: site.title,
-    description: site.description,
-    url: `https://${site.domain}`,
-    siteName: site.title,
-    locale: site.locale,
+    title: content.meta.title,
+    description: content.meta.description,
+    url: `https://${content.meta.domain}`,
+    siteName: "Kesra",
+    locale: "en_US",
     type: "website",
-    images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Kesra — Backend Platform & Systems Engineer" }]
+  },
+  icons: {
+    icon: "/favicon.svg",
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title,
-    description: site.description,
-    images: ["/og.svg"]
+    title: content.meta.title,
+    creator: content.meta.twitter,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true }
-  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${space.variable} ${mono.variable}`}>
-      <body style={{ fontFamily: "var(--font-sans), ui-sans-serif, system-ui" }}>
-        {children}
+    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+      <body className="font-sans antialiased selection:bg-white selection:text-black">
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );

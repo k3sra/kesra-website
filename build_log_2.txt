@@ -1,0 +1,9 @@
+
+> kesra-website@1.0.0 build
+> npx next build
+
+  Γû▓ Next.js 14.2.12
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...

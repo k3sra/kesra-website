@@ -7,6 +7,10 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"]
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
+  },
   async headers() {
     return [
       {

@@ -15,15 +15,5 @@ module.exports = {
   theme: {
     extend: {}
   },
-  safelist: [
-    { pattern: /bg-\[[^\]]+\]/ },
-    { pattern: /text-\[[^\]]+\]/ },
-    { pattern: /opacity-\[[^\]]+\]/ },
-    { pattern: /h-\[[^\]]+\]/ },
-    { pattern: /w-\[[^\]]+\]/ },
-    { pattern: /inset-\[[^\]]+\]/ },
-    { pattern: /flex-\[[^\]]+\]/ },
-    { pattern: /grid-\[[^\]]+\]/ },
-    { pattern: /shadow-\[[^\]]+\]/ }
-  ]
+  plugins: [],
 };
